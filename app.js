@@ -12,6 +12,7 @@ let year_list_header = document.querySelector('.year-list-header')
 let month_picker = calendar.querySelector('#month-picker')
 let calendar_header_year = calendar.querySelector('#year')
 let year_list_title = calendar.querySelector('#current-year')
+let today_date = document.querySelector('#today-date')
 
 let currDate = new Date()
 
@@ -83,37 +84,37 @@ function createMonths () {
 
 
 //create html elements
-function createNestedElements(preText1, preText2) {
-    let divElement = document.createElement('div');
+// function createNestedElements(preText1, preText2) {
+//     let divElement = document.createElement('div');
 
-    let createSpan = function() {
-        let spanElement = document.createElement('span');
-        spanElement.setAttribute('class', 'year-change');
-        return spanElement;
-    }
+//     let createSpan = function() {
+//         let spanElement = document.createElement('span');
+//         spanElement.setAttribute('class', 'year-change');
+//         return spanElement;
+//     }
 
-    let preElement1 = createPreElement(preText1);
-    let preElement2 = createPreElement(preText2);
+//     let preElement1 = createPreElement(preText1);
+//     let preElement2 = createPreElement(preText2);
 
-    let spanElement1 = createSpan();
-    spanElement1.appendChild(preElement1);
+//     let spanElement1 = createSpan();
+//     spanElement1.appendChild(preElement1);
 
-    let spanElement2 = createSpan();
-    spanElement2.appendChild(preElement2);
+//     let spanElement2 = createSpan();
+//     spanElement2.appendChild(preElement2);
 
-    divElement.appendChild(spanElement1);
-    divElement.appendChild(spanElement2);
+//     divElement.appendChild(spanElement1);
+//     divElement.appendChild(spanElement2);
 
-    return divElement;
-}
+//     return divElement;
+// }
 
-function createPreElement(textContent) {
-    let preElement = document.createElement('pre');
-    preElement.textContent = textContent;
-    return preElement;
-}
+// function createPreElement(textContent) {
+//     let preElement = document.createElement('pre');
+//     preElement.textContent = textContent;
+//     return preElement;
+// }
 
-const year_list_controller = createNestedElements('<', '>');
+// const year_list_controller = createNestedElements('<', '>');
 
 //End
 
@@ -142,6 +143,13 @@ function generateYears (startYear = curr_year){
 
     return year_list;
 
+}
+
+today_date.onclick = () => {
+    curr_month = currDate.getMonth()
+    curr_year = currDate.getFullYear()
+    generateCalendar(curr_month, curr_year)
+    console.log("clicked on today btn")
 }
 
 year_list_title.innerHTML = curr_year;
