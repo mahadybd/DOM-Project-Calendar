@@ -30,9 +30,6 @@ function generateCalendar (month, year){
 
     calendar_days.innerHTML = ''
 
-    // if (!month) month = currDate.getMonth()
-    // if (!year) year = currDate.getFullYear()
-
     let temp_month = `${month_names[month]}`
     month_picker.innerHTML = temp_month
     calendar_header_year.innerHTML = year
@@ -79,44 +76,6 @@ function createMonths () {
 
     return month_list;
 };
-
-
-
-
-//create html elements
-// function createNestedElements(preText1, preText2) {
-//     let divElement = document.createElement('div');
-
-//     let createSpan = function() {
-//         let spanElement = document.createElement('span');
-//         spanElement.setAttribute('class', 'year-change');
-//         return spanElement;
-//     }
-
-//     let preElement1 = createPreElement(preText1);
-//     let preElement2 = createPreElement(preText2);
-
-//     let spanElement1 = createSpan();
-//     spanElement1.appendChild(preElement1);
-
-//     let spanElement2 = createSpan();
-//     spanElement2.appendChild(preElement2);
-
-//     divElement.appendChild(spanElement1);
-//     divElement.appendChild(spanElement2);
-
-//     return divElement;
-// }
-
-// function createPreElement(textContent) {
-//     let preElement = document.createElement('pre');
-//     preElement.textContent = textContent;
-//     return preElement;
-// }
-
-// const year_list_controller = createNestedElements('<', '>');
-
-//End
 
 let years = []; 
 
